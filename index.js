@@ -4,6 +4,12 @@ const bancos = require('./bancos')
 const atms = require('./atms')
 const app = express();
 
+app.get('/', (req, res) => res.json({
+  name: 'ATM api',
+  version: '1.0.0',
+  uptime: `${Math.floor(process.uptime())} s`
+}));
+
 app.get('/redes', (req, res) => res.json(redes));
 app.get('/bancos', (req, res) => res.json(bancos));
 
