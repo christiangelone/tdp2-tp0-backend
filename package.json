@@ -1,0 +1,26 @@
+{
+  "name": "tdp2-tp0-backend",
+  "version": "1.0.0",
+  "description": "ATM api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christiangelone/tdp2-tp0-backend.git"
+  },
+  "keywords": [
+    "atm",
+    "api"
+  ],
+  "author": "Christian Angelone",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/christiangelone/tdp2-tp0-backend/issues"
+  },
+  "homepage": "https://github.com/christiangelone/tdp2-tp0-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
