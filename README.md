@@ -10,4 +10,10 @@ $ npm start
 La API se va a levantar en el puerto 3333 (http://localhost:3333/)
 
 ## Deploy en Heroku
-<<Completar cuando tengamos la config>>
+```sh
+$ heroku login
+$ git add .
+$ git commit -m "your commit message"
+$ git push heroku master
+```
+
