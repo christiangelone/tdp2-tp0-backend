@@ -16,4 +16,5 @@ app.get('/atms', (req, res) => {
   if(banco && red) return res.json(atms.filter(atm => atm.red === red && atm.banco === banco))
 });
 
-app.listen(3000, () => console.log('ATM api listening at port 3000...'));
+port = process.env["PORT"]
+app.listen(port, () => console.log(`ATM api listening at port ${port}...`));
