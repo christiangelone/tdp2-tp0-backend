@@ -8,8 +8,7 @@ app.get('/redes', (req, res) => res.json(redes));
 app.get('/bancos', (req, res) => res.json(bancos));
 
 app.get('/atms', (req, res) => {
-  const red = req.query.red
-  const banco = req.query.banco
+  const { red, banco } = req.query
   if(!red && !banco) return res.json(atms);
   if(red && !banco) return res.json(atms.filter(atm => atm.red === red))
   if(banco && !red) return res.json(atms.filter(atm => atm.banco === banco))
