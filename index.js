@@ -11,7 +11,11 @@ app.get('/', (req, res) => res.json({
 }));
 
 app.get('/redes', (req, res) => res.json(redes));
-app.get('/bancos', (req, res) => res.json(bancos));
+app.get('/bancos', (req, res) => {
+  const { red } = req.query
+  if(red) return res.json(bancos({ red }))
+  return res.json(bancos({}))
+});
 
 app.get('/atms', (req, res) => {
   const { red, banco } = req.query
