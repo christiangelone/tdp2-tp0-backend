@@ -66,7 +66,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{urlApi}}/atms?redes=LINK",
+							"raw": "{{urlApi}}/atms?red=LINK",
 							"host": [
 								"{{urlApi}}"
 							],
@@ -75,7 +75,7 @@
 							],
 							"query": [
 								{
-									"key": "redes",
+									"key": "red",
 									"value": "LINK"
 								}
 							]
@@ -106,7 +106,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{urlApi}}/atms?redes=LINK&bancos=BANCO DE LA NACION ARGENTINA",
+							"raw": "{{urlApi}}/atms?red=LINK&banco=BANCO DE LA NACION ARGENTINA",
 							"host": [
 								"{{urlApi}}"
 							],
@@ -115,11 +115,11 @@
 							],
 							"query": [
 								{
-									"key": "redes",
+									"key": "red",
 									"value": "LINK"
 								},
 								{
-									"key": "bancos",
+									"key": "banco",
 									"value": "BANCO DE LA NACION ARGENTINA"
 								}
 							]
@@ -150,7 +150,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{urlApi}}/atms?bancos=BANCO DE LA NACION ARGENTINA",
+							"raw": "{{urlApi}}/atms?banco=BANCO DE LA NACION ARGENTINA",
 							"host": [
 								"{{urlApi}}"
 							],
@@ -159,7 +159,7 @@
 							],
 							"query": [
 								{
-									"key": "bancos",
+									"key": "banco",
 									"value": "BANCO DE LA NACION ARGENTINA"
 								}
 							]
@@ -175,7 +175,7 @@
 			"description": "Endpoints que devuelve los catalogos de la API",
 			"item": [
 				{
-					"name": "Get Bancos",
+					"name": "Get Bancos sin filtros",
 					"event": [
 						{
 							"listen": "test",
@@ -205,6 +205,46 @@
 							]
 						},
 						"description": "Se prueba que el endpoint que devuelve el catalogo de los bancos funcione"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bancos con filtro de redes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9a708fe9-6ce2-4298-b762-d73d603e435f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{urlApi}}/bancos?red=BANELCO",
+							"host": [
+								"{{urlApi}}"
+							],
+							"path": [
+								"bancos"
+							],
+							"query": [
+								{
+									"key": "red",
+									"value": "BANELCO"
+								}
+							]
+						},
+						"description": "Se prueba que funcione el endpoint que devuelve el catalogo de los bancos con el filtro de red"
 					},
 					"response": []
 				},
