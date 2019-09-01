@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "b252aa05-91d5-4d94-b867-cf33185753a7",
+		"name": "TDP2-TP0",
+		"description": "Pruebas de integracion del TP0 de taller de desarrollo de proyectos 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ATM",
+			"description": "Endpoints que manejan la informacion de los ATMs",
+			"item": [
+				{
+					"name": "Get ATMs sin filtros",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9a708fe9-6ce2-4298-b762-d73d603e435f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{urlApi}}/atms",
+							"host": [
+								"{{urlApi}}"
+							],
+							"path": [
+								"atms"
+							]
+						},
+						"description": "Se prueba que funcione el endpoint que devuelve las atms sin aplicar ningun filtro"
+					},
+					"response": []
+				},
+				{
+					"name": "Get ATMs con filtro de redes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9a708fe9-6ce2-4298-b762-d73d603e435f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{urlApi}}/atms?redes=LINK",
+							"host": [
+								"{{urlApi}}"
+							],
+							"path": [
+								"atms"
+							],
+							"query": [
+								{
+									"key": "redes",
+									"value": "LINK"
+								}
+							]
+						},
+						"description": "Se prueba que funcione el endpoint que devuelve las atms con filtro de redes"
+					},
+					"response": []
+				},
+				{
+					"name": "Get ATMs con filtro de redes y bancos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9a708fe9-6ce2-4298-b762-d73d603e435f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{urlApi}}/atms?redes=LINK&bancos=BANCO DE LA NACION ARGENTINA",
+							"host": [
+								"{{urlApi}}"
+							],
+							"path": [
+								"atms"
+							],
+							"query": [
+								{
+									"key": "redes",
+									"value": "LINK"
+								},
+								{
+									"key": "bancos",
+									"value": "BANCO DE LA NACION ARGENTINA"
+								}
+							]
+						},
+						"description": "Se prueba que funcione el endpoint que devuelve las atms con filtro de redes y bancos"
+					},
+					"response": []
+				},
+				{
+					"name": "Get ATMs con filtro de bancos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9a708fe9-6ce2-4298-b762-d73d603e435f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{urlApi}}/atms?bancos=BANCO DE LA NACION ARGENTINA",
+							"host": [
+								"{{urlApi}}"
+							],
+							"path": [
+								"atms"
+							],
+							"query": [
+								{
+									"key": "bancos",
+									"value": "BANCO DE LA NACION ARGENTINA"
+								}
+							]
+						},
+						"description": "Se prueba que funcione el endpoint que devuelve las atms con filtro de bancos"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Catalogos",
+			"description": "Endpoints que devuelve los catalogos de la API",
+			"item": [
+				{
+					"name": "Get Bancos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9a708fe9-6ce2-4298-b762-d73d603e435f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{urlApi}}/bancos",
+							"host": [
+								"{{urlApi}}"
+							],
+							"path": [
+								"bancos"
+							]
+						},
+						"description": "Se prueba que el endpoint que devuelve el catalogo de los bancos funcione"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Redes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9a708fe9-6ce2-4298-b762-d73d603e435f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{urlApi}}/redes",
+							"host": [
+								"{{urlApi}}"
+							],
+							"path": [
+								"redes"
+							]
+						},
+						"description": "Se prueba que el endpoint que devuelve el catalogo de las redes funcione"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
