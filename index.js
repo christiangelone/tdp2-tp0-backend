@@ -18,10 +18,7 @@ app.get('/bancos', (req, res) => {
 
 app.get('/atms', (req, res) => {
   const { red, banco } = req.query
-  if(!red && !banco) return res.json(atms);
-  if(red && !banco) return res.json(atms.filter(atm => atm.red === red))
-  if(banco && !red) return res.json(atms.filter(atm => atm.banco === banco))
-  if(banco && red) return res.json(atms.filter(atm => atm.red === red && atm.banco === banco))
+  return res.json(atms({ red, banco }))
 });
 
 port = process.env["PORT"] || 3333

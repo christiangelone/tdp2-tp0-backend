@@ -1,8 +1,7 @@
 const atms = require('./atms')
 const distinct = (value, index, self) => self.indexOf(value) === index
 
-module.exports = ({ red }) => atms
-    .filter(atm => (red ? atm.red === red : true))
+module.exports = ({ red }) => atms({ red })
     .map(atm => atm.banco)
     .filter(distinct)
     .sort()
