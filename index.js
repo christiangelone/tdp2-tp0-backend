@@ -11,14 +11,14 @@ app.get('/', (req, res) => res.json({
 }));
 
 app.get('/redes', (req, res) => res.json(redes));
-app.get('/bancos', (req, res) => res.json(bancos));
+app.get('/bancos', (req, res) => {
+  const { red } = req.query
+  return res.json(bancos({ red }))
+});
 
 app.get('/atms', (req, res) => {
   const { red, banco } = req.query
-  if(!red && !banco) return res.json(atms);
-  if(red && !banco) return res.json(atms.filter(atm => atm.red === red))
-  if(banco && !red) return res.json(atms.filter(atm => atm.banco === banco))
-  if(banco && red) return res.json(atms.filter(atm => atm.red === red && atm.banco === banco))
+  return res.json(atms({ red, banco }))
 });
 
 port = process.env["PORT"] || 3333
