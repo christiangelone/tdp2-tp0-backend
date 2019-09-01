@@ -13,8 +13,7 @@ app.get('/', (req, res) => res.json({
 app.get('/redes', (req, res) => res.json(redes));
 app.get('/bancos', (req, res) => {
   const { red } = req.query
-  if(red) return res.json(bancos({ red }))
-  return res.json(bancos({}))
+  return res.json(bancos({ red }))
 });
 
 app.get('/atms', (req, res) => {
